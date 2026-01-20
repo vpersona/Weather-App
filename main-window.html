@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast - Twoja Pogoda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-default"> <div class="container">
+        <header>
+            <div class="search-box">
+                <i class="fa-solid fa-location-dot" id="geo-btn" title="Użyj mojej lokalizacji"></i>
+                <input type="text" id="city-input" placeholder="Wpisz miasto..." autocomplete="off">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            
+            <div class="settings">
+                <div class="unit-toggle">
+                    <span id="unit-c" class="active">°C</span>
+                    <label class="switch">
+                        <input type="checkbox" id="unit-checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <span id="unit-f">°F</span>
+                </div>
+                <button id="fav-btn" title="Dodaj do ulubionych"><i class="fa-regular fa-heart"></i></button>
+            </div>
+        </header>
+            <div class="favorites-dropdown">
+                <button id="toggle-fav-menu" class="dropdown-btn">
+                    <h4><i class="fa-solid fa-star"></i> Ulubione <i class="fa-solid fa-chevron-down arrow"></i></h4>
+                </button>
+                <div id="fav-menu-content" class="dropdown-content">
+                    <div id="fav-list" class="chip-list"></div>
+                </div>
+            </div>
+            <div class="recent-dropdown">
+                <button id="toggle-recent-menu" class="dropdown-btn">
+                    <h4><i class="fa-solid fa-clock-rotate-left"></i> Ostatnie <i class="fa-solid fa-chevron-down arrow"></i></h4>
+                </button>
+                <div id="recent-menu-content" class="dropdown-content">
+                <div id="recent-list" class="chip-list">
+            </div>
+    </div>
+</div>
+        <main>
+            <section class="current-weather">
+                <div class="main-info">
+                    <h1 id="city-name">Warszawa</h1>
+                    <p id="date">Poniedziałek, 12:00</p>
+                    <div class="weather-display">
+                        <img src="" alt="Ikona pogody" id="weather-icon">
+                        <span id="temperature">20</span><span class="unit">°C</span>
+                    </div>
+                    <p id="description">Częściowe zachmurzenie</p>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <i class="fa-solid fa-droplet"></i>
+                        <p>Wilgotność</p>
+                        <span id="humidity">65%</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-wind"></i>
+                        <p>Wiatr</p>
+                        <span id="wind-speed">12 km/h</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-compress"></i>
+                        <p>Ciśnienie</p>
+                        <span id="pressure">1012 hPa</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="chart-container">
+                <h3>Trend temperatury (24h)</h3>
+                <canvas id="tempChart"></canvas>
+            </section>
+
+            <section class="mood-tracker">
+    <h3>Moodtracker</h3>
+    <div class="mood-options">
+        <button class="mood-btn" data-mood="1">😢</button>
+        <button class="mood-btn" data-mood="2">☹️</button>
+        <button class="mood-btn" data-mood="3">😐</button>
+        <button class="mood-btn" data-mood="4">🙂</button>
+        <button class="mood-btn" data-mood="5">🤩</button>
+        </div>
+        
+        <div class="mood-analysis">
+            <canvas id="moodChart"></canvas>
+            <p id="mood-prediction">Predykcja nastroju na jutro: <span>...</span></p>
+        </div>
+    </section>
+            <section class="forecast">
+                <h3>Prognoza na 5 dni</h3>
+                <div id="forecast-container" class="forecast-grid">
+                    </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
