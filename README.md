@@ -27,5 +27,5 @@ Aplikacja pogodowa zintegrowana z inteligentnym dziennikiem nastroju. System dos
 
 1. Sklonuj repozytorium:
    ```bash
-   git clone [https://github.com/TwojLogin/weather-mood-app.git](https://github.com/TwojLogin/weather-mood-app.git)
+   git clone https://github.com/vpersona/Weather-App.git
 2. Otwórz plik index.html w przeglądarce.
