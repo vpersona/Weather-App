@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkyCast - Twoja Pogoda</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!--biblioteka Font awesome do wyświetlania ikonek-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -42,19 +42,19 @@
                 </button>
                 <div id="recent-menu-content" class="dropdown-content">
                 <div id="recent-list" class="chip-list">
+                </div>
+                </div>
             </div>
-    </div>
-</div>
         <main>
             <section class="current-weather">
                 <div class="main-info">
-                    <h1 id="city-name">Warszawa</h1>
-                    <p id="date">Poniedziałek, 12:00</p>
+                    <h1 id="city-name">Warszawa</h1> <!--Domyślne miasto-->
+                    <p id="date">Poniedziałek, 12:00</p> <!--DOmyślna data i czas-->
                     <div class="weather-display">
                         <img src="" alt="Ikona pogody" id="weather-icon">
                         <span id="temperature">20</span><span class="unit">°C</span>
                     </div>
-                    <p id="description">Częściowe zachmurzenie</p>
+                    <p id="description">Częściowe zachmurzenie</p> <!--Domyślna pogooda-->
                 </div>
 
                 <div class="details-grid">
@@ -81,21 +81,23 @@
                 <canvas id="tempChart"></canvas>
             </section>
 
+            <!--MOODTRACKER - WYKRES ŚLEDZĄCY NASZ NASTRÓJ I PRZEWIDUJĄCY JUTRZEJSZY-->
+
             <section class="mood-tracker">
-    <h3>Moodtracker</h3>
-    <div class="mood-options">
-        <button class="mood-btn" data-mood="1">😢</button>
-        <button class="mood-btn" data-mood="2">☹️</button>
-        <button class="mood-btn" data-mood="3">😐</button>
-        <button class="mood-btn" data-mood="4">🙂</button>
-        <button class="mood-btn" data-mood="5">🤩</button>
-        </div>
+                <h3>Moodtracker</h3>
+                <div class="mood-options">
+                    <button class="mood-btn" data-mood="1">😢</button>
+                    <button class="mood-btn" data-mood="2">☹️</button>
+                    <button class="mood-btn" data-mood="3">😐</button>
+                    <button class="mood-btn" data-mood="4">🙂</button>
+                    <button class="mood-btn" data-mood="5">🤩</button>
+                </div>
         
-        <div class="mood-analysis">
-            <canvas id="moodChart"></canvas>
-            <p id="mood-prediction">Predykcja nastroju na jutro: <span>...</span></p>
-        </div>
-    </section>
+                <div class="mood-analysis">
+                    <canvas id="moodChart"></canvas>
+                    <p id="mood-prediction">Predykcja nastroju na jutro: <span>...</span></p>
+                </div>
+            </section>
             <section class="forecast">
                 <h3>Prognoza na 5 dni</h3>
                 <div id="forecast-container" class="forecast-grid">

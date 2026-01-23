@@ -83,13 +83,10 @@ header {
     background-color: transparent;
 }
 /* Dropdown menu do ulubionych miast*/
-/* Kontener menu */
 .favorites-dropdown {
     margin: 20px 0;
     width: 100%;
 }
-
-/* Przycisk rozwijania */
 .dropdown-btn {
     background: none;
     border: none;
@@ -106,14 +103,11 @@ header {
     margin-left: 10px;
     font-size: 0.8rem;
     transition: transform 0.3s ease;
-}
-
-/* Stan po rozwinięciu - obrót strzałki */
+    }
 .dropdown-btn.active .arrow {
     transform: rotate(180deg);
 }
 
-/* Zawartość menu - domyślnie ukryta */
 .dropdown-content {
     max-height: 0;
     overflow: hidden;
@@ -123,18 +117,16 @@ header {
     border-radius: 15px;
 }
 
-/* Stan rozwinięty */
+
 .dropdown-content.show {
-    max-height: 500px; /* Dowolna duża wartość */
+    max-height: 500px;
     opacity: 1;
     padding: 15px;
     margin-top: 10px;
-}
-
-/* Dopasowanie chipów do menu */
+    }
 .chip-list {
     display: flex;
-    flex-direction: column; /* Miasta jedno pod drugim w liście */
+    flex-direction: column; 
     gap: 8px;
 }
 

@@ -8,12 +8,13 @@ function initTempChart(forecastData) {
     // Dynamiczna etykieta w zależności od jednostki
     const unitSymbol = currentUnit === 'metric' ? '°C' : '°F';
 
+// Inicjalizuje i aktualizuje wykres liniowy temperatury. 
     tempChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: hours,
             datasets: [{
-                label: `Temperatura (${unitSymbol})`, // TUTAJ ZMIANA
+                label: `Temperatura (${unitSymbol})`, 
                 data: temps,
                 borderColor: '#fff',
                 tension: 0.4,
@@ -34,16 +35,16 @@ function initTempChart(forecastData) {
                 } 
             },
             plugins: {
-        legend: {
-            display: true,
-            labels: { color: '#fff' },
-            onClick: (e) => e.stopPropagation() 
+                legend: {
+                    display: true,
+                    labels: { color: '#fff' },
+                    onClick: (e) => e.stopPropagation() 
+                }
+            }
         }
-    }
-}
     });
 }
-
+// Narysowanie słupkowego wykresu humoru na podstawie danych z localstorage (7 wpisów)
 function initMoodChart() {
     const ctx = document.getElementById('moodChart').getContext('2d');
     const history = JSON.parse(localStorage.getItem('moodHistory')) || [];
@@ -61,6 +62,8 @@ function initMoodChart() {
         }
     });
 }
+
+//Blokownie zapisania humoru jeśli w danym dniu humor już został zapisany 
 function disableMoodButtons() {
     const today = new Date().toLocaleDateString();
     let history = JSON.parse(localStorage.getItem('moodHistory')) || [];
